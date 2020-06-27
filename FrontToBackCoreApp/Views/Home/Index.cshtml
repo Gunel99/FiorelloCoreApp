@@ -1,0 +1,331 @@
+﻿@model HomeVM
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+<!-- Main start -->
+<main>
+    <!-- Main slider start -->
+    <section id="slider">
+        <div class="images multiple-items d-flex">
+            @foreach (Slider img in Model.Sliders)
+            {
+                <div class="image">
+                    <img src="~/img/@img.Image" alt="Slide image">
+                </div>
+            }
+        </div>
+        <div class="title">
+            <h2>@Model.SliderContents.Title</h2>
+            <p>
+                @Model.SliderContents.Description 
+            </p>
+            <img src="~/img/@Model.SliderContents.Image" alt="Sign image">
+        </div>
+    </section>
+    <!-- Main slider end -->
+
+    <!-- All product start -->
+    <section id="home_all_products">
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-12 d-flex justify-content-between">
+                    <ul class="products_category_mobile d-md-none list-unstyled">
+                        <li>
+                            <a href="" class="categories mr-2">Categories</a>
+                            <i clssass="fas fa-caret-down"></i>
+                            <ul class="category list-unstyled" style="display: none;">
+                                <li><a href="" data-id="all">All</a></li>
+                                @foreach (Category category in Model.Categories)
+                                {
+                                    <li><a href="" data-id="@category.Name.ToLower()">@category.Name</a></li>
+                                }
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="products_category d-none d-md-flex list-unstyled">
+                        <li><a href="#" data-id="all" class="selected">All</a></li>
+                        @foreach (Category category in Model.Categories)
+                        {
+                            <li><a href="" data-id="@category.Name.ToLower()">@category.Name</a></li>
+                        }
+                    </ul>
+                    <div class="filter">
+                        <span>Filter</span>
+                        <i class="fas fa-caret-down"></i>
+                        <div class="sub_filter d-flex">
+                            <ul>
+                                <h3>Sort By</h3>
+                                <li><a href="#">Default</a></li>
+                                <li><a href="#">Popularity</a></li>
+                                <li><a href="#">Newness</a></li>
+                                <li><a href="#">Price: Low To High</a></li>
+                                <li><a href="#">Price: High To Low</a></li>
+                            </ul>
+                            <ul>
+                                <h3>Price Range</h3>
+                                <li><a href="#">All</a></li>
+                                <li><a href="#">$0-$10</a></li>
+                                <li><a href="#">$10-$20</a></li>
+                                <li><a href="#">$20-$30</a></li>
+                                <li><a href="#">$30-$40</a></li>
+                                <li><a href="#">40$+</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @await Component.InvokeAsync("Products")
+            </div>
+        </div>
+    </section>
+    <!-- All product end -->
+    
+    <!-- Video part start -->
+    <section id="video_part">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="video">
+                        <div class="image">
+                            <a href="https://www.youtube.com/watch?time_continue=1&v=K-0cjGCNYfs" target="_blank">
+                                <img src="~/img/h3-video-img.jpg" alt="Video">
+                                <div class="play_button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="content">
+                        <h2>Suprise Your <span>Valentine!</span> Let us arrange a smile.</h2>
+                        <p>
+                            Where flowers are our inspiration to create lasting memories. Whatever the occasion...
+                        </p>
+                        <div class="title">
+                            <div class="img"><img src="~/img/h1-custom-icon.png"></div>
+                            <p>Hand picked just for you.</p><br>
+
+                            <div class="img"><img src="~/img/h1-custom-icon.png"></div>
+                            <p>Unique flower arrangements</p><br>
+
+                            <div class="img"><img src="~/img/h1-custom-icon.png"></div>
+                            <p>Best way to say you care.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Video part end -->
+    <!-- About experts start -->
+    <section id="about_experts">
+        <div class="container">
+            <div class="title text-center">
+                <div class="col-lg-6 col-12 m-auto">
+                    <h2 class="mb-4">Flower Experts</h2>
+                    <p>
+                        A perfect blend of creativity, energy, communication, happiness and love. Let us arrange a
+                        smile for you.
+                    </p>
+                </div>
+            </div>
+            <div class="experts">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="expert text-center">
+                            <div class="img">
+                                <img src="~/img/h3-team-img-1.png" alt="CRYSTAL BROOKS">
+                            </div>
+                            <div class="content p-4">
+                                <h6 class="m-0">CRYSTAL BROOKS</h6>
+                                <span>Florist</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="expert text-center">
+                            <div class="img">
+                                <img src="~/img/h3-team-img-2.png" alt="SHIRLEY HARRIS">
+                            </div>
+                            <div class="content p-4">
+                                <h6 class="m-0">SHIRLEY HARRIS</h6>
+                                <span>Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="expert text-center">
+                            <div class="img">
+                                <img src="~/img/h3-team-img-3.png" alt="BEVERLY CLARK">
+                            </div>
+                            <div class="content p-4">
+                                <h6 class="m-0">BEVERLY CLARK</h6>
+                                <span>Florist</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="expert text-center">
+                            <div class="img">
+                                <img src="~/img/h3-team-img-4.png" alt="AMANDA WATKINS">
+                            </div>
+                            <div class="content p-4">
+                                <h6 class="m-0">AMANDA WATKINS</h6>
+                                <span>Florist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About experts end -->
+    <!-- Join to us start -->
+    <section id="join_to_us">
+        <div class="container">
+            <div class="main text-center">
+                <div class="title mb-4">
+                    <h3>Join The Colorful Bunch!</h3>
+                </div>
+                <div class="search d-flex justify-content-center">
+                    <div class="search_input">
+                        <input id="emailAddress" type="email" name="email_address" placeholder="Email Address">
+                    </div>
+                    <div class="search_button">
+                        <button id="emailSubmit" class="submit" type="submit">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Join to us end -->
+    <!-- From our blog start -->
+    <section id="from_our_blog">
+        <div class="container">
+            <div class="title text-center">
+                <div class="col-lg-6 col-12 m-auto">
+                    <h2 class="mb-4">From our Blog</h2>
+                    <p>
+                        A perfect blend of creativity, energy, communication, happiness and love. Let us arrange a
+                        smile for you.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about_flowers">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="about_flower">
+                            <div class="img">
+                                <a href="#"><img src="~/img/blog-feature-img-1.jpg" alt="Flower Power"></a>
+                                <div class="date">
+                                    <a href="#">27.04.2018</a>
+                                </div>
+                            </div>
+                            <div class="content text-center p-4">
+                                <h5>
+                                    <a href="#">
+                                        Flower Power
+                                    </a>
+                                </h5>
+                                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="about_flower">
+                            <div class="img">
+                                <a href="#"><img src="~/img/blog-feature-img-3.jpg" alt="Local Florists"></a>
+                                <div class="date">
+                                    <a href="#">03.05.2018</a>
+                                </div>
+                            </div>
+                            <div class="content text-center p-4">
+                                <h5>
+                                    <a href="#">
+                                        Local Florists
+                                    </a>
+                                </h5>
+                                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="about_flower">
+                            <div class="img">
+                                <a href="#"><img src="~/img/blog-feature-img-4.jpg" alt="Flower Beauty"></a>
+                                <div class="date">
+                                    <a href="#">03.05.2018</a>
+                                </div>
+                            </div>
+                            <div class="content text-center p-4">
+                                <h5>
+                                    <a href="#">
+                                        Flower Beauty
+                                    </a>
+                                </h5>
+                                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- From our blog end -->
+    <!-- Second slider start -->
+    <section id="second_slider">
+        <div class="container">
+            <div class="row">
+                <div class="slider multiple-items">
+                    <div class="item text-center">
+                        <div class="image">
+                            <img src="~/img/h3-team-img-1.png" alt="Expert image">
+                        </div>
+                        <div class="title">
+                            <p>
+                                Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus lingua.
+                            </p>
+                            <span class="name">Anna Barnes</span>
+                            <br>
+                            <span>Florist</span>
+                        </div>
+                    </div>
+                    <div class="item text-center">
+                        <div class="image">
+                            <img src="~/img/h3-team-img-4.png" alt="Expert image">
+                        </div>
+                        <div class="title">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.
+                            </p>
+                            <span class="name">Jasmine White</span>
+                            <br>
+                            <span>Florist</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Second slider end -->
+    <!-- Third slider start -->
+    <section id="third_slider">
+        <div class="container p-0">
+            <div class="row">
+                <div class="cards d-flex multiple-items">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Third slider end -->
+</main>
+<!-- Main end -->

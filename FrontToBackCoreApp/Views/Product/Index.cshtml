@@ -1,0 +1,322 @@
+﻿@model IEnumerable<ProductVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <main>
+        <!-- Title wrapper start -->
+        <section id="title_wrapper">
+            <div class="container px-3">
+                <div class="title">
+                    <h1>Product List</h1>
+                    <p>Where flowers are our inspiration</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="products_lists">
+            <div class="container">
+                <div class="row mainList">
+                    @*<partial name="_ProductPartial"/>*@
+                    @await Component.InvokeAsync("Products")
+                </div>
+                <div class="row justify-content-center mt-4">
+                    <button class="btn btn-success" id="loadMore">Load More</button>
+                </div>
+            </div>
+        </section>       
+
+        <!-- Title wrapper end -->
+        <!-- Orange Amaryllis start -->
+        <section id="orange_amaryllis">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-12">
+                        <div class="product_image d-flex">
+                            <div class="first_image">
+                                <div class="image">
+                                    <img src="img/shop-2-gallery-4-300x400.jpg" alt="Product image">
+                                </div>
+                                <div class="image">
+                                    <img src="img/shop-2-gallery-3-300x400.jpg" alt="Product image">
+                                </div>
+                                <div class="image">
+                                    <img src="img/shop-2-gallery-2-300x400.jpg" alt="Product image">
+                                </div>
+                                <div class="image">
+                                    <img src="img/shop-2-gallery-1-300x400.jpg" alt="Product image">
+                                </div>
+                            </div>
+                            <div class="second_image">
+                                <div class="image">
+                                    <img src="img/shop-2-img (1).jpg" alt="Product image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-12">
+                        <div class="content">
+                            <h2 class="m-0">Orange Amaryllis</h2>
+                            <span>$259</span>
+                            <p>
+                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                                himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a
+                                augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc.
+                            </p>
+                            <div class="quantity_add d-flex">
+                                <div class="col-lg-7 col-md-12 col-sm-7 p-0">
+                                    <div class="quantity d-flex justify-content-between">
+                                        <span>Quantity</span>
+                                        <div class="quantity_number">
+                                            <i id="countersub" class="fas fa-caret-left"></i>
+                                            <span id="productcount" class="product_count">1</span>
+                                            <i id="counteradd" class="fas fa-caret-right"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-12 col-sm-5 p-0">
+                                    <button type="submit" class="add-to-cart addBasket2">
+                                        Add to cart
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product_info">
+                                <p>SKU: <span>989873</span></p>
+                                <p>Categories: <span>Various, Exotic</span></p>
+                                <p>Tags: <span>Llilies, Orchids</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- Orange Amaryllis end -->
+        <!-- Tab Menu start -->
+       <section id="p_tab_menu">
+            <div class="container">
+                <div class="row px-3">
+                    <div class="col-12">
+                        <div class="menus d-flex">
+                            <div class="menu selected" data-id="1">
+                                Description
+                            </div>
+                            <div class="menu" data-id="2">
+                                Additional information
+                            </div>
+                            <div class="menu" data-id="3">
+                                Reviews (2)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="contents">
+                            <div class="content" data-id="1">
+                                <h3>The power of flowers</h3>
+                                <p class="m-0">
+                                    Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra
+                                    nulla
+                                    ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel
+                                    augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas
+                                    tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing
+                                    sem
+                                    neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.
+                                    Maecenas nec odio et ante
+                                </p>
+                            </div>
+                            <div class="content d-none" data-id="2">
+                                <p class="m-0"><strong>Weight:</strong> <span>1 kg</span></p>
+                                <p class="m-0"><strong>Dimensions:</strong> <span>30 x 30 x 50 cm</span></p>
+                            </div>
+                            <div class="content d-none" data-id="3">
+                                <div class="reviews">
+                                    <h2>Reviews</h2>
+                                    <div class="comments">
+                                        <div class="comment_area mb-3 d-flex">
+                                            <div class="col-lg-1 col-md-2 col-3 px-2">
+                                                <div class="image">
+                                                    <img src="img/h3-team-img-2.png" alt="Commenter">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-11 col-md-10 col-9">
+                                                <div class="comment">
+                                                    <p class="mb-2">
+                                                        <strong>Joshua Garcia </strong>
+                                                        <span>27.04.2018</span>
+                                                    </p>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                                        commodo ligula eget dolor. Aenean massa. Cum sociis Theme
+                                                        natoque
+                                                        penatibus et magnis dis parturient montes, nascetur ridiculus
+                                                        mus.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comment_area d-flex">
+                                            <div class="col-lg-1 col-md-2 col-3 px-2">
+                                                <div class="image">
+                                                    <img src="img/h3-team-img-3.png" alt="Commenter">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-11 col-md-10 col-9">
+                                                <div class="comment">
+                                                    <p class="mb-2">
+                                                        <strong>Joan Stanley</strong>
+                                                        <span>27.04.2018</span>
+                                                    </p>
+                                                    <p>
+                                                        Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus,
+                                                        sem
+                                                        quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam
+                                                        quam nunc, blandit vel, luctus pulvinar, hendrerit
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add_reviews">
+                                    <h2>Add a review</h2>
+                                    <div class="review">
+                                        <p>
+                                            Your email address will not be published. Required fields are marked
+                                            <sup>*</sup>
+                                        </p>
+                                        <form action="#" class="form-group">
+                                            <div>
+                                                <label>Your review <sup>*</sup></label><br>
+                                                <textarea name="your_review" id="your_review" cols="45" rows="8"
+                                                          aria-required="true" required></textarea>
+                                            </div>
+                                            <div>
+                                                <label>Name<sup>*</sup></label>
+                                                <input class="form-control" type="text" id="author" name="author"
+                                                       size="30" aria-required="true" required>
+                                            </div>
+                                            <div>
+                                                <label>Email<sup>*</sup></label>
+                                                <input class="form-control" type="email" id="email" name="email"
+                                                       size="30" aria-required="true" required>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" value="yes" id="" name="">
+                                            </div>
+                                            <p>
+                                                Save my name, email, and website in this browser for the next time I
+                                                comment.
+                                            </p>
+                                            <input class="button" type="submit" name="submit" id="submit"
+                                                   value="submit">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- Tab Menu end -->
+        <!-- Product List Part start -->
+        <section id="product_list_products">
+            <div class="container p-0">
+                <div class="row w-100 m-0 p-0">
+                    <h2>RELATED PRODUCTS</h2>
+                    <div class="all_product same_product" data-id="1">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-xs-12">
+                                <div class="card">
+                                    <div class="image">
+                                        <img src="img/shop-3-img.jpg" title="Cactus In Orange" alt="Product 1">
+                                        <div class="info">
+                                            <span>Sold</span>
+                                        </div>
+                                    </div>
+                                    <div class="title text-center">
+                                        <p>CACTUS IN ORANGE</p>
+                                        <div class="add_to_cart">
+                                            <p>Read more</p>
+                                        </div>
+                                        <div class="price">
+                                            <p>$259</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-xs-12">
+                                <div class="card">
+                                    <div class="image">
+                                        <img src="img/shop-1-img.jpg" title="Schefflera" alt="Product 2">
+                                        <div class="info new">
+                                            <span>New</span>
+                                        </div>
+                                    </div>
+                                    <div class="title text-center">
+                                        <p>SCHEFFLERA</p>
+                                        <div class="add_to_cart">
+                                            <p>Add to cart</p>
+                                        </div>
+                                        <div class="price">
+                                            <p>$259</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-xs-12">
+                                <div class="card">
+                                    <div class="image">
+                                        <img src="img/shop-9-img.jpg" title="Rock Soapwort" alt="Product 3">
+                                    </div>
+                                    <div class="title text-center">
+                                        <p>ROCK SOAPWORT</p>
+                                        <div class="add_to_cart">
+                                            <p>View products</p>
+                                        </div>
+                                        <div class="price">
+                                            <p>$259</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-xs-12">
+                                <div class="card">
+                                    <div class="image">
+                                        <img src="img/shop-5-img.jpg" title="Wild Cactus" alt="Product 4">
+                                        <div class="info sale">
+                                            <span>Sale</span>
+                                        </div>
+                                    </div>
+                                    <div class="title text-center">
+                                        <p>WILD CACTUS</p>
+                                        <div class="add_to_cart">
+                                            <p>Add to cart</p>
+                                        </div>
+                                        <div class="price">
+                                            <span><del>$259</del></span>
+                                            <span>$159</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Product List Part end -->
+        <!-- Third slider start -->
+        <section id="third_slider">
+            <div class="container p-0">
+                <div class="row">
+                    <div class="cards d-flex multiple-items">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Third slider end -->
+    </main>
+
